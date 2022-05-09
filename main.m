@@ -3,35 +3,24 @@ clear all
 close all
 
 % we add AGATA functions to the Matlab path
-addpath(genpath('~/MATLAB/agata-master'));
-addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master';
-addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src';
-addpath agata-master/;
-addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/analysis/';
-addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/variabilityMetrics/';
-addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/errorMetrics/':
-addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/';
-addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/riskMetrics/';
-addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/time/';
-addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/glycemicTransformationMetrics/';
-addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/riskMetrics/';
-addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/inspection/';
-addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/visualization/';
-addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/processing/';
-addpath utils/
-addpath statisticalAnalysis/
-addpath dataLoading&Preparation/
-
-
-%% dCGM data loading from CSV files
-main_dir="/Users/cristinaandolfatto/Desktop/Università/Collaborazione_ricerca_DiabetesClassification/dCGM_data/";
-data_path=main_dir+"dCGM_dataset_Padova_2022-03-08.csv";
-data_table=readtable(data_path);
-data_table.Properties.VariableNames={'ptid_sensorid','ptid','sensorid','Time','glucose','a1C','a1Cmethod','a1CCollectionDate','label','label_with_prediabetes','age','ethnicity','gender','ht','wt','race','yearDiagnosed'};
-
-%% dCGM patients structures computation (saved in patients_structures_path) & creation of the array of patients structures
-patients_structures_path=main_dir+"patients_structures/";
-[subjects,subjects_id]=patientsStructuresCreation(data_table, patients_structures_path);
+% addpath(genpath('~/MATLAB/agata-master'));
+% addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master';
+% addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src';
+% addpath agata-master/;
+% addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/analysis/';
+% addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/variabilityMetrics/';
+% addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/errorMetrics/':
+% addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/';
+% addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/riskMetrics/';
+% addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/time/';
+% addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/glycemicTransformationMetrics/';
+% addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/riskMetrics/';
+% addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/inspection/';
+% addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/visualization/';
+% addpath '/Users/cristinaandolfatto/Documents/MATLAB/agata-master/src/processing/';
+% addpath utils/
+% addpath statisticalAnalysis/
+% addpath dataLoading&Preparation/
 
 %% data loading
 main_dir="/Users/cristinaandolfatto/Desktop/Università/Collaborazione_ricerca_DiabetesClassification/dCGM_data/patients_statistics";
@@ -53,4 +42,3 @@ tot_H=size(healthySub,1); % total number of healthy subjects
 %% remove of subjects with more than missingThreshold % of missing samples
 [subjectsWithFeatures2,diabeticSub2,prediabeticSub2,healthySub2]=removeMissing(subjectsWithFeatures,15);
 
-%%
