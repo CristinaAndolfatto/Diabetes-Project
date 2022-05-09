@@ -40,5 +40,9 @@ tot_P=size(prediabeticSub,1); % total number of prediabetics
 tot_H=size(healthySub,1); % total number of healthy subjects
 
 %% remove of subjects with more than missingThreshold % of missing samples
-[subjectsWithFeatures2,diabeticSub2,prediabeticSub2,healthySub2]=removeMissing(subjectsWithFeatures,15);
+[subjectsWithFeatures,diabeticSub,prediabeticSub,healthySub]=removeMissing(subjectsWithFeatures,15);
+tot_subjects=size(subjectsWithFeatures,1); % total number of subjects
+tot_D=size(diabeticSub,1); % total number of diabetics
+tot_P=size(prediabeticSub,1); % total number of prediabetics
+tot_H=size(healthySub,1); % total number of healthy subjects
 
