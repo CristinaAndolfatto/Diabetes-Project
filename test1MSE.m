@@ -58,3 +58,11 @@ end
 MSE_average_healthy=mean(MSE_healthy);
 MSE_std_healthy=std(MSE_healthy);
 MSE_SE_healthy=MSE_std_healthy/sqrt(tot_H);
+
+%% 
+%% new features: MSE
+for i=1:1%numel(glucotypesSubjects)
+    subj=glucotypesSubjects{i,1};
+    [MSEvalues]=MSE_complexity_index(subj);
+    glucotypesSubjects{i,1}.features.variability.MSEvalues=MSEvalues;
+end
